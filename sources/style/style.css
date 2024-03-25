@@ -1,0 +1,128 @@
+/* ================================================
+	GENERAL
+================================================ */
+
+
+body
+{
+	font-family:sans-serif;
+}
+
+
+/* ================================================
+	MENU
+================================================ */
+
+.encadre
+{
+	width:200px;
+	border-radius:10px;
+	box-shadow: 5px 5px 5px gray;
+	overflow:hidden;
+}
+.intitule
+{
+	font-weight:bold;
+	cursor:pointer;
+}
+
+.jaune
+{
+	background-color:#FFFFAA;
+}
+.jaune .intitule
+{
+	background-color:#FFFF00;
+}
+
+
+.bleu
+{
+	background-color:#CCCCFF;
+}
+.bleu .intitule
+{
+	background-color:#AAAAFF;
+}
+
+.vert
+{
+	background-color:#CCFFCC;
+}
+.vert .intitule
+{
+	background-color:#AAFFAA;
+}
+
+.rouge
+{
+	background-color:#FFCCCC;
+}
+.rouge .intitule
+{
+	background-color:#FFAAAA;
+}
+
+#boutonLecture
+{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	cursor:pointer;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+#boutonLecture.playOff
+{
+	background-color:#55FF55;
+	background-image:url("../images/icone_LECTURE.svg");
+	border-top : solid 4px #AAFFAA;
+	border-right : solid 4px #AAFFAA;
+	border-left : solid 4px #005500;
+	border-bottom : solid 4px #005500;
+}
+#boutonLecture.playOff:active
+{
+	border-bottom : solid 4px #AAFFAA;
+	border-left : solid 4px #AAFFAA;
+	border-right : solid 4px #005500;
+	border-top : solid 4px #005500;
+}
+
+#boutonLecture.playOn
+{
+	background-color:#FF5555;
+	background-image:url("../images/icone_STOP.svg");
+	border-top : solid 4px #FFAAAA;
+	border-right : solid 4px #FFAAAA;
+	border-left : solid 4px #550000;
+	border-bottom : solid 4px #550000;
+}
+#boutonLecture.playOn:active
+{
+	background-color:red;
+	border-bottom : solid 4px #FFAAAA;
+	border-left : solid 4px #FFAAAA;
+	border-right : solid 4px #550000;
+	border-top : solid 4px #550000;
+}
+
+.unite
+{
+	font-size:x-small;
+}
+
+.ferme
+{
+	display:none;
+}
+
+/* =================================================
+ OSCILLO 
+ ============================================= */
+ 
+ #oscillo_triphase
+ {
+ 	cursor:pointer;
+ }
