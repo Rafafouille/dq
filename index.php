@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Transformée dans le plan DQ</title>
+		<script src="./sources/JS/espion.js"></script>
         <script src="https://code.createjs.com/1.0.0/easeljs.min.js"/></script>
         <script src="./sources/JS/libraries/math.js.js"/></script>
         
