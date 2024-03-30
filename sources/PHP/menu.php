@@ -14,13 +14,13 @@
 	<div class="contenu">
 		<form>
 			<label for="input_I" title="Courant efficace dans le stator">I<sub>s</sub> = </label>
-			<input type="number" name="input_I" id="input_I" step="0.1" onchange="IEFF(this.value)" size="5" value="0.7"> <span class="unite">A</span>
+			<input type="number" name="input_I" id="input_I" step="0.01" onchange="IEFF(this.value)" size="5" value="0.7"> <span class="unite">A</span>
 			<input type="range" name="range_I" id="range_I" min="0" max="2" step="0.1" value="0.7" oninput="IEFF(this.value)">
 		</form>
 		<br/>
 		<form>
 			<label for="input_f" title="Fréquence électrique">f = </label>
-			<input type="number" name="input_f" id="input_f" min="0" size="5" step="0.1" onchange="f(this.value)"> <span class="unite">Hz</span>
+			<input type="number" name="input_f" id="input_f" min="0" size="5" step="0.01" onchange="f(this.value)"> <span class="unite">Hz</span>
 			<input type="range" name="range_f" id="range_f" min="0" max="2" step="0.1" oninput="f(this.value)">
 		</form>
 		<br/>
