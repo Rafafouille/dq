@@ -120,7 +120,7 @@ function IEFF(i_)
 		redessine_courbes_bi();
 		
 	}
-	return IEFF
+	return IEFF_
 }
 
  

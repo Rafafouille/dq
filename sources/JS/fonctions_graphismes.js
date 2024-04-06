@@ -18,6 +18,38 @@ function creeGraphiqueTriphase()
 	BOBINES_TRI = new createjs.Container();
 	SCENE_TRI.addChild(BOBINES_TRI)
 	
+	// Calque AIMANT PERMANENT
+	AIMANT_TRI = new createjs.Container();
+	var rayon = 200	;
+	var epaisseur = 80;
+	var longueurBranches = 100;
+	var poleSud = new createjs.Shape();	
+		poleSud.graphics.beginFill("blue");
+		poleSud.graphics.moveTo(-rayon-epaisseur/2, -longueurBranches).lineTo(-rayon-epaisseur/2, 0)
+		.arcTo(-rayon-epaisseur/2,rayon+epaisseur/2,0,rayon+epaisseur/2,rayon+epaisseur/2)
+		.lineTo(0,rayon-epaisseur/2)
+		.arcTo(-rayon+epaisseur/2,rayon-epaisseur/2,-rayon+epaisseur/2,0,rayon-epaisseur/2)
+		.lineTo(-rayon+epaisseur/2, -longueurBranches);
+		AIMANT_TRI.addChild(poleSud);
+	var poleNord = new createjs.Shape();	
+		poleNord.graphics.beginFill("red");
+		poleNord.graphics.moveTo(rayon+epaisseur/2, -longueurBranches).lineTo(rayon+epaisseur/2, 0)
+		.arcTo(rayon+epaisseur/2,rayon+epaisseur/2,0,rayon+epaisseur/2,rayon+epaisseur/2)
+		.lineTo(0,rayon-epaisseur/2)
+		.arcTo(rayon-epaisseur/2,rayon-epaisseur/2,rayon-epaisseur/2,0,rayon-epaisseur/2)
+		.lineTo(rayon-epaisseur/2, -longueurBranches);
+		AIMANT_TRI.addChild(poleNord);
+	var textS = new createjs.Text("S", "bold 40px Arial", "white");
+		textS.x=-rayon-13;
+		textS.y=-50;
+		AIMANT_TRI.addChild(textS);
+	var textN = new createjs.Text("N", "bold 40px Arial", "white");
+		textN.x=rayon-13;
+		textN.y=-50;
+		AIMANT_TRI.addChild(textN);
+	SCENE_TRI.addChild(AIMANT_TRI)
+	AIMANT_TRI.visible=false;
+	
 	// Rotor
 	ROTOR_SYNC_TRI = new RotorSynchrone();
 	SCENE_TRI.addChild(ROTOR_SYNC_TRI); 
@@ -455,9 +487,17 @@ function redessine_B_tri(redessine=false )
 	VECTEURS_TRI.addChild(vecB1Chasles);
 	VECTEURS_TRI.addChild(vecB2Chasles);
 	VECTEURS_TRI.addChild(vecB3Chasles);
-	
 	VECTEURS_TRI.addChild(Btot);
 	
+	if($("#choix_affiche_aimant").is(':checked')) // Si on affiche les bobines (et pas l'aimant)
+	{
+		vecB1.visible = false;
+		vecB2.visible = false;
+		vecB3.visible = false;
+		vecB1Chasles.visible = false;
+		vecB2Chasles.visible = false;
+		vecB3Chasles.visible = false;
+	}
 	
 	if(!$("#checkboxAfficheB").is(':checked'))
 	{
@@ -467,6 +507,10 @@ function redessine_B_tri(redessine=false )
 		vecB3Chasles.visible = false;
 	}
 	
+	
+	
+	// On recalle aussi l'aimant
+	AIMANT_TRI.rotation = -THETA*180/Math.PI;
 
 	if(redessine)
 		STAGE_TRI.update();

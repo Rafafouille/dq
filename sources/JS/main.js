@@ -28,6 +28,7 @@ creeGraphiqueOscilloTriphase()
 creeGraphiqueOscilloBiphase()
 creeGraphiqueFresnel()
 
+afficheCacheDiphase(false);
 
 
 omega(1) // <-- Pour mettre à jour toutes les variables

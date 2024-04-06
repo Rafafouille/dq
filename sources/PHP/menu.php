@@ -61,8 +61,16 @@
 		Affichage
 	</div>
 	<div class="contenu ferme">
+		Afficher le stator comme...
+		<br/>
 		<form>
-			<input type="checkbox" id="checkboxAfficheDiphase" onchange="afficheCacheDiphase()" checked/>
+			<input type="radio" id="choix_affiche_bobines_tri" name="choix_affiche_sourceB" value="bobines" onchange="AIMANT_TRI.visible=false;BOBINES_TRI.visible=true;" checked/><label for="choix_affiche_bobines_tri">des bobines</label>
+			<input type="radio" id="choix_affiche_aimant" name="choix_affiche_sourceB" value="aimant" onchange="AIMANT_TRI.visible=true;BOBINES_TRI.visible=false;"/><label for="choix_affiche_aimant">un aimant</label>
+		</form>
+		<br/>
+		<form>
+			
+			<input type="checkbox" id="checkboxAfficheDiphase" onchange="afficheCacheDiphase()"/>
 			<label for="checkboxAfficheDiphase">Affiche Diphasé</label>
 			<input type="checkbox" id="checkboxAfficheRotor" onchange="afficheCacheRotor()" checked/>
 			<label for="checkboxAfficheRotor">Affiche le rotor</label>
